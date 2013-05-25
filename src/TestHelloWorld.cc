@@ -1,3 +1,4 @@
+#include <cassert>
 #include "TestSuite.hpp"
 
 class TestHelloWorld : public TestSuite

@@ -48,4 +48,9 @@ class KattisTask
     virtual int solveTask() = 0;
 };
 
+/**
+ * Type of global task reference, should be declared by a solver
+ * (e.g. task_t g_task = TaskHelloWorld(); )
+ * Makefile ensures that the proper compilation unit is referenced.
+ */
 typedef KattisTask && task_t;
