@@ -1,13 +1,15 @@
-# accepts the following arguments:
-# mode=test expects a TestSuite target
-# driver=TaskSomething/TestSomething should always be given
+# Accepts the following arguments:
+# driver=TaskSomething/TestSomething (should always be given)
+# mode=test (optional, expects a TestSuite target)
+#
+# All directories can be flattened by setting $SRC_DIR = "." and $INCS = "".
 
 PROGRAM = out
-SRC_DIR = .
+SRC_DIR = src
 DRIVER_FILE = $(SRC_DIR)/$(driver).cc
 C_FILES = $(DRIVER_FILE)
 C_FILES += $(SRC_DIR)/main.cc
-# INCS = -I include/
+INCS = -I include/
 
 OBJS = $(patsubst %.cc, %.o, $(C_FILES))
 CC = g++
